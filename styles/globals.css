@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Custom-Bold";
+  src: url("/fonts/GeneralSans-Bold.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Bold-Italic";
+  src: url("/fonts/GeneralSans-BoldItalic.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Extralight";
+  src: url("/fonts/GeneralSans-Extralight.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Italic";
+  src: url("/fonts/GeneralSans-Italic.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Light";
+  src: url("/fonts/GeneralSans-Light.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Light-Italic";
+  src: url("/fonts/GeneralSans-LightItalic.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Medium";
+  src: url("/fonts/GeneralSans-Medium.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Regular";
+  src: url("/fonts/GeneralSans-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Semibold";
+  src: url("/fonts/GeneralSans-Semibold.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Semibold-Italic";
+  src: url("/fonts/GeneralSans-SemiboldItalic.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Variable";
+  src: url("/fonts/GeneralSans-Variable.woff2");
+}
+
+@font-face {
+  font-family: "Custom-Variable-Italic";
+  src: url("/fonts/GeneralSans-VariableItalic.woff2");
+}
