@@ -96,6 +96,8 @@ module.exports = {
           800: "#959CAB",
           900: "#8C93A3",
         },
+        gradient1: "#8F00FF",
+        gradient2: "#C250FF",
       },
     },
   },
