@@ -21,9 +21,9 @@ export default function Posts() {
   return (
       <div className="bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700">
           <div className='flex justify-around '><div className='w-[95%] mt-10 bg-gray-200 rounded-2xl mb-10'>
-              <div className='flex flex-row'><img src='nfts/cosmic-cats.png' className='w-20 mt-4 ml-3 mr-4 border-solid border-4 border-warning-600 rounded-full'></img>
+              <Link href="/community"><div className='flex flex-row'><img src='nfts/cosmic-cats.png' className='w-20 mt-4 ml-3 mr-4 border-solid border-4 border-warning-600 rounded-full'></img>
                   <span className='mt-10 -ml-1.5 text-xl font-bold'>Cosmic Cats Community</span>
-              </div>
+              </div></Link>
               <div className='flex justify-around'>
                   <div className='flex w-[50%] h-[9.5vh] mt-4 bg-white shadow-lg rounded-2xl mb-10'>
                      <div className="border w-[80%] rounded overflow-hidden mb-4 ml-4 mr-4 mt-4">
