@@ -11,6 +11,7 @@ declare global {
 }
 }
 
+// @ts-ignore: Type error
 const ethersProvider = typeof window === "object" ? new ethers.providers.Web3Provider(window.ethereum) : null
 
 export const getEthersProvider = (): ethers.providers.Web3Provider => {
