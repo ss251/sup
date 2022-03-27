@@ -40,7 +40,7 @@ export const createProfile = async (handle: string) => {
     handle: handle,
   });
 
-  const result = await pollUntilIndexed(createProfileResult.txHash);
+  const result = await pollUntilIndexed(createProfileResult.data.createProfile.txHash);
   const logs = result.txReceipt.logs;
   const topicId = utils.id(
     'ProfileCreated(uint256,address,address,string,string,address,bytes,string,uint256)'
