@@ -16,7 +16,7 @@ export default function Create() {
                   <div className="flex flex-col w-[100%]">
                       <div className='w-[100%] ml-20 mt-14 font-extrabold ' >
                       <p>Images</p>
-                        <div className='w-[60%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
+                        <div className='w-[50%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
                             <form >
                                 <input
                                     className="px-2 w-full rounded pt-2"
@@ -28,7 +28,7 @@ export default function Create() {
                   </div>
                   <div className='w-[100%] ml-20 mt-8 font-extrabold ' >
                       <p>Community Name</p>
-                          <div className='w-[60%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
+                          <div className='w-[50%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
                               <form >
                                 <input
                                     className="px-2 w-full rounded pt-2"
@@ -40,7 +40,7 @@ export default function Create() {
                   </div>
                   <div className='w-[100%] ml-20 mt-8 font-extrabold ' >
                       <p>Community Logo</p>
-                          <div className='w-[60%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
+                          <div className='w-[50%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
                               <form >
                                 <input
                                     className="px-2 w-full rounded pt-2"
@@ -56,7 +56,7 @@ export default function Create() {
                       <div className="flex flex-col w-[100%]">
                           <div className='w-[100%] ml-20 mt-14 font-extrabold ' >
                       <p>Contract Address</p>
-                        <div className='w-[60%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
+                        <div className='w-[50%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
                             <form >
                                 <input
                                     className="px-2 w-full rounded pt-2"
@@ -72,7 +72,7 @@ export default function Create() {
                   </div>
                   <div className='w-[100%] ml-20 mt-28 ' >
                       <p className='font-extrabold'>Visibility</p>
-                          <div className='w-[60%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
+                          <div className='w-[50%] h-[5vh]  mt-4 bg-white  rounded-md mb-10'>
                               <form >
                                 <input
                                     className="px-2 w-full rounded pt-2"
