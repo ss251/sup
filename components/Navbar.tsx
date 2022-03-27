@@ -2,6 +2,7 @@ import { Provider, chain, defaultChains } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { WalletLinkConnector } from 'wagmi/connectors/walletLink'
+import Link from 'next/link'
 
 import { Connect } from './Connect'
 
@@ -38,7 +39,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex flex-row justify-between items-center flex-wrap pt-2 pl-6 pr-6 bg-black">
-        <h1 className="font-bold text-5xl mb-4 text-warning-600">Sup.</h1>
+        <h1 className="font-bold text-5xl mb-4 text-warning-600"><Link href="/"><a>Sup.</a></Link></h1>
         <Provider autoConnect connectors={connectors}><div><Connect/></div></Provider>
       </nav>
     </div>

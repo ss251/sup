@@ -4,6 +4,7 @@ import { login } from "../utils/login"
 import { createProfile } from '../utils/createProfile'
 import { getProfile } from '../utils/getProfiles'
 import { useState, useEffect } from 'react'
+import truncateEthAddress from 'truncate-eth-address'
 
 export const Connect = () => {
   const [{ data: connectData, error: connectError }, connect] = useConnect()
@@ -31,10 +32,11 @@ export const Connect = () => {
 
   if (accountData) {
     return (
-      <div>
+        <div className='flex flex-row'>
+        {signedIn && profileExists && <p className='text-warning-500 mt-2 mr-2 truncate overflow-hidden'>{ truncateEthAddress(accountData.address) }({localStorage.getItem("profile_id")})</p>}
         {connectData.connected && !(signedIn) && <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={signin}>Sign in</button>}
-            { signedIn &&  <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={logout}>Disconnect</button>}
-            { signedIn && !profileExists && <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={ () => {createProfile(handle)} }>Create Profile</button>}
+        { signedIn &&  <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={logout}>Disconnect</button>}
+        { signedIn && !profileExists && <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={ () => {createProfile(handle)} }>Create Profile</button>}
       </div>
     )
   }
