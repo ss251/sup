@@ -12,7 +12,7 @@ export const Connect = () => {
   })
     const [signedIn, setSignedIn] = useState(typeof window !== 'undefined' && localStorage.getItem("accessToken") !== null)
     const [profileExists, setProfileExists] = useState(typeof window !== 'undefined' && localStorage.getItem("profile_id") !== null)
-    const handle= "tester"
+    const handle= "lfgrowhackathontwenty" //update
     
     const logout = () => {
         localStorage.removeItem("accessToken")
