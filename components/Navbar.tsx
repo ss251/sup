@@ -37,12 +37,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="flex flex-row justify-between items-center flex-wrap pt-2 pl-6 pr-6 bg-white">
-        <h1 className="font-bold text-5xl mb-4">Sup.</h1>
+      <nav className="flex flex-row justify-between items-center flex-wrap pt-2 pl-6 pr-6 bg-black">
+        <h1 className="font-bold text-5xl mb-4 text-warning-600">Sup.</h1>
         <Provider autoConnect connectors={connectors}><div><Connect/></div></Provider>
-        
-        
-        
       </nav>
     </div>
   );

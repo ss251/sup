@@ -1,18 +1,40 @@
-import { useAccount, useConnect } from 'wagmi'
+import { useAccount, useConnect, useSignMessage } from 'wagmi'
+import { gql, useLazyQuery, useMutation } from '@apollo/client'
+import { login } from "../utils/login"
+import { createProfile } from '../utils/createProfile'
+import { getProfile } from '../utils/getProfiles'
+import { useState, useEffect } from 'react'
 
 export const Connect = () => {
   const [{ data: connectData, error: connectError }, connect] = useConnect()
   const [{ data: accountData }, disconnect] = useAccount({
   })
+    const [signedIn, setSignedIn] = useState(typeof window !== 'undefined' && localStorage.getItem("accessToken") !== null)
+    const [profileExists, setProfileExists] = useState(typeof window !== 'undefined' && localStorage.getItem("profile_id") !== null)
+    const handle= "tester"
+    
+    const logout = () => {
+        localStorage.removeItem("accessToken")
+        localStorage.removeItem("profile")
+        localStorage.removeItem("profile_id")
+        window.location.reload()
+        disconnect()
+    }
+
+    const signin = async () => {
+        await login()
+        setSignedIn(true)
+        await getProfile({ownedBy: accountData.address})
+        typeof window !== 'undefined' && localStorage.getItem("profile_id") !== null && setProfileExists(true)
+    }
+    
 
   if (accountData) {
     return (
       <div>
-        <div>
-            {accountData.address}
-        </div>
-        <div>Connected to {accountData.connector.name}</div>
-        <button onClick={disconnect}>Disconnect</button>
+        {connectData.connected && !(signedIn) && <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={signin}>Sign in</button>}
+            { signedIn &&  <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={logout}>Disconnect</button>}
+            { signedIn && !profileExists && <button className='font-bold bg-white text-primary-500 border border-primary-500 pt-2 pb-2 pl-5 pr-5 mb-2 rounded-md hover:bg-primary-500 hover:text-white' onClick={ () => {createProfile(handle)} }>Create Profile</button>}
       </div>
     )
   }
@@ -53,9 +75,12 @@ export const Connect = () => {
                     {!connector.ready && ' (unsupported)'}
                 </button>
             ))}
-                  </div>
-          </button>
+                  
+              </div>
+              
 
+          </button>
+          
       {connectError && <div>{connectError?.message ?? 'Failed to connect'}</div>}
     </div>
   )
