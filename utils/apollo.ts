@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, ApolloLink, HttpLink } from "@apollo/client"
 
-const httpLink = new HttpLink({ uri: process.env.LENS_API });
+const httpLink = new HttpLink({ uri:  "https://api-mumbai.lens.dev/" });
 
 const authLink = new ApolloLink((operation, forward) => {
   const token = JSON.parse(localStorage.getItem('accessToken'));
